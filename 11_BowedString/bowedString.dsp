@@ -6,7 +6,7 @@ in1 = hslider("Bow Position", 0, -1, 1, 0.001):si.smoo:si.smoo:si.smoo; 	//write
 OutGain = 150.;
 
 low_M = 1.0;
-low_K = hslider("String Stiffness",0.3,0.001,0.5,0.0001) : si.smoo;
+low_K = hslider("String Stiffness",0.3,0.001,0.7,0.0001) : si.smoo;
 low_Z = 0.001;
 nlZ = hslider("Bow Pressure",0.3,0.001,0.5,0.0001) : si.smoo;
 nlscale = 0.00005;

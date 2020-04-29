@@ -3,7 +3,7 @@ import("mi.lib");
 
 in1 = hslider("Pluck Position", 0, -1, 1, 0.001):si.smoo; 	//write a specific position input signal operation here
 
-OutGain = 1;
+OutGain = 8;
 
 model = (
 	osc(1., 0.1, 0.0003, 0, 0., 0.),

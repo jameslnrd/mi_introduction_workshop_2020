@@ -3,7 +3,7 @@ import("mi.lib");
 
 in1 = hslider("Bow Position", 0, 0, 100, 0.001):si.smoo:si.smoo:si.smoo; 	//Need very smooth position data here !
 
-OutGain = 15;
+OutGain = 20;
 
 type = 0;
 

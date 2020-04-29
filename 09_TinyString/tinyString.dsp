@@ -3,7 +3,7 @@ import("mi.lib");
 
 in1 = button("Force Impulse"): ba.impulsify;  	//write a specific force input signal operation here
 
-OutGain = 0.3;
+OutGain = 0.6;
 
 stiffness = 0.5;
 damping = 0.0003;
