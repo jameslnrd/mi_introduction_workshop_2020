@@ -1,7 +1,7 @@
 # mi_introduction_workshop_2020
-Introduction do mass-interaction sound synthesis, using the FAUST web editor to run examples in the browser.
+Introduction to mass-interaction sound synthesis, using the FAUST web editor to run examples in the browser.
 
-The ".mdl" codes are MIMS Mass Interaction Model Scripts that can be compiled into Faust or gen~ DSP code with the MIMS tool.
+The ".mdl" codes are Mass Interaction Model Scripts that can be compiled into Faust or gen~ DSP code with the MIMS tool.
 A web version of MIMS is available here: http://mi-creative.eu/tool_MIMS-Online_V2.html
 
 
