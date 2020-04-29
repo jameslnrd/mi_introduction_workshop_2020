@@ -1,7 +1,20 @@
+declare name    "Plucked Triangle";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A triangular mesh (fixed at its corners) excited by a plucking mass
+    - inputs: pluck position
+    - outputs: two listening points on the triangle
+    - controls: triangle mesh stiffness, damping and air friction.
+*/
+
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = hslider("Pluck Position", 0, -1, 1, 0.001):si.smoo; 	//write a specific position input signal operation here
+in1 = hslider("Pluck Position", 0, -1, 1, 0.001):si.smoo;
 
 OutGain = 30;
 

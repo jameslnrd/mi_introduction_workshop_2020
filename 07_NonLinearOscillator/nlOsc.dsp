@@ -1,7 +1,22 @@
+declare name    "Non Linear Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A non-linear oscillator (containing a cubic stiffness term, making pitch amplitude dependant)
+    - inputs: force impulse
+    - outputs: oscillator position.
+    - controls: value of the non-linear stiffness component.
+
+Note: we are using the nlSpringDamperClipped interaction that defines an upper bound for stiffness.
+This can save from numerical divergence when large displacements cause very large reaction forces.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Hammer Input Force"): ba.impulsify* -0.1;  	//write a specific force input signal operation here
+in1 = button("Hammer Input Force"): ba.impulsify* -0.1;
 
 OutGain = 1;
 

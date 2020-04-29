@@ -1,3 +1,17 @@
+declare name    "Harmonic Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+The simplest mass-interaction construct: a harmonic oscillator, containing only one physical element (mi.osc).
+    - inputs: force impulse
+    - outputs: oscillator' position.
+    - controls: none.
+
+Note: The routing pattern could be simplified here (cf.diagram), as the model contains no interaction elements.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 

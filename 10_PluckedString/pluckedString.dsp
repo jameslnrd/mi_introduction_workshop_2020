@@ -1,7 +1,22 @@
+declare name    "Plucked String";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A plucked string with a few controls.
+    - inputs: pick position.
+    - outputs: two listening points on the string.
+    - controls: pick stiffness and damping, string stiffness, damping and air friction.
+
+Note: the model block diagram is starting to look like a piece of modern art.
+*/
+
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = hslider("Pos Input 1", 0, -1, 1, 0.001):si.smoo; 	//write a specific position input signal operation here
+in1 = hslider("Pick position", 0, -1, 1, 0.001):si.smoo;
 
 OutGain = 5;
 

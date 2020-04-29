@@ -1,7 +1,19 @@
+declare name    "Plucked Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+Plucking a simple oscillator
+    - inputs: position control of the "plucking" mass
+    - outputs: oscillator position.
+    - controls: none.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = hslider("Pluck Position", 0, -1, 1, 0.001):si.smoo; 	//write a specific position input signal operation here
+in1 = hslider("Pluck Position", 0, -1, 1, 0.001):si.smoo;
 
 OutGain = 8;
 

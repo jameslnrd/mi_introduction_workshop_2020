@@ -1,3 +1,17 @@
+declare name    "Harmonic Oscillator v3";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+The simplest mass-interaction construct: a harmonic oscillator, built by assembling four elements: 
+a mass, a fixed point and a spring and a damper interaction.
+The resulting model is identical to an mi.osc element (which integrates them together).
+    - inputs: force impulse
+    - outputs: oscillator' position.
+    - controls: none.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 

@@ -1,7 +1,21 @@
+declare name    "Tiny String";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A small string, composed of 8 masses and two fixed points, connected by spring-dampers
+    - inputs: force impulse on mass 7.
+    - outputs: position of mass 2.
+    - controls: none
+
+Note: the model block diagram is starting to get more complex, but it's still readable.    
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Force Impulse"): ba.impulsify;  	//write a specific force input signal operation here
+in1 = button("Force Impulse"): ba.impulsify;
 
 OutGain = 0.6;
 

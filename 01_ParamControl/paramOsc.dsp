@@ -1,7 +1,19 @@
+declare name    "Param Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A basic oscillator with labelled stiffness and damping parameters
+    - inputs: force impulse
+    - outputs: oscillator' position.
+    - controls: none.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Frc Input 1"): ba.impulsify* 0.25;  	//write a specific force input signal operation here
+in1 = button("Frc Input 1"): ba.impulsify* 0.25;
 
 OutGain = 1;
 

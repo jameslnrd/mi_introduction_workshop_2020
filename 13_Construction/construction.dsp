@@ -1,7 +1,22 @@
+declare name    "Strange Physical Construction";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A triangle mesh (fixed corners) struck by a hammer, connected (through a slightly non-linear spring)
+to a resonant square mesh (fixed corners).
+    - inputs: Force impulse applied to the hammer
+    - outputs: one listening point on the triangle, another on the resonnant mesh.
+    - controls: triangle stiffness and daming, square mesh stiffness and damping, hammer force impulse scaling.
+
+Note: the block diagram of the model will give you nightmares.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Force Impulse"): ba.impulsify * hslider("Force Scaling", 0.5, 0.01, 0.9, 0.001) * -1;  	//write a specific force input signal operation here
+in1 = button("Force Impulse"): ba.impulsify * hslider("Force Scaling", 0.5, 0.01, 0.9, 0.001) * -1;
 
 OutGain = 1;
 

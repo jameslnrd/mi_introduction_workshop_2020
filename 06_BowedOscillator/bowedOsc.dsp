@@ -1,3 +1,18 @@
+declare name    "Bowed Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+Friction-based interaction with a simple oscillator => cool squeaky sounds.
+    - inputs: position control of the "bowing" mass
+    - outputs: oscillator position.
+    - controls: none.
+
+Note: the "type" parameter changes the way the friction interaction is calculated
+(set to 0 for piecewise linear function or 1 for friction à-la-Bilbao).
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 

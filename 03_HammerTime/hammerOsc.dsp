@@ -1,7 +1,23 @@
+declare name    "Hammered Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+An oscillator struck by a hammer (a second "loose" oscillator placed above it)
+    - inputs: force impulse onto the hammer mass
+    - outputs: oscillator and hammer positions.
+    - controls: none.
+
+Note: The "clicking" sound is because we are listening to the hammer mass position on the
+second output channel. Listening to this mass allows to plot the collision, but if you 
+were just interested in the oscillator's sound you should only listen to that.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Frc Input 1"): ba.impulsify * -0.1;  	//write a specific force input signal operation here
+in1 = button("Frc Input 1"): ba.impulsify * -0.1;
 
 OutGain = 1;
 

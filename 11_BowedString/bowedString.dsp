@@ -1,7 +1,19 @@
+declare name    "Bowed String";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A simple bowed string model
+    - inputs: bow position (move it slowly to yield self-sustained oscillations!).
+    - outputs: two listening points on the string.
+    - controls: bow pressure and string stiffness.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = hslider("Bow Position", 0, -1, 1, 0.001):si.smoo:si.smoo:si.smoo; 	//write a specific position input signal operation here
+in1 = hslider("Bow Position", 0, -1, 1, 0.001):si.smoo:si.smoo:si.smoo; 	// nice and smooth position signal
 
 OutGain = 150.;
 

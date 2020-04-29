@@ -1,3 +1,17 @@
+declare name    "Boucing On an Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A dropped mass falling onto an oscillator (due to gravity)
+    - inputs: none, just gravity doing its thing.
+    - outputs: oscillator position.
+    - controls: none.
+
+Note: Beware, if using 32 bit precision gravity forces can become so small they are truncated in calculations !
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 

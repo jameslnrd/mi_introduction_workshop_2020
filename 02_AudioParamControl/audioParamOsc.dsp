@@ -1,9 +1,21 @@
+declare name    "Audio Param Oscillator";
+declare author  "James Leonard";
+declare date    "April 2020";
+
+/* ========= DESCRITPION =============
+
+A basic oscillator with labelled stiffness and damping parameters, controlled by sliders
+    - inputs: force impulse
+    - outputs: oscillator' position.
+    - controls: stiffness and damping.
+*/
+
 import("stdfaust.lib");
 import("mi.lib");
 
-in1 = button("Force Impulse"): ba.impulsify;  	//write a specific force input signal operation here
-in2 = hslider("Stiffness", 0.01, 0, 0.1, 0.0001):si.smoo; 	//write a specific parameter signal operation here
-in3 = hslider("Damping", 0.0001, 0, 0.005, 0.000001):si.smoo; 	//write a specific parameter signal operation here
+in1 = button("Force Impulse"): ba.impulsify;
+in2 = hslider("Stiffness", 0.01, 0, 0.1, 0.0001):si.smoo; 
+in3 = hslider("Damping", 0.0001, 0, 0.005, 0.000001):si.smoo;
 
 OutGain = 0.05;
 
