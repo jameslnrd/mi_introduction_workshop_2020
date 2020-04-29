@@ -1,0 +1,509 @@
+
+# A plucked triangular mesh model (fixed at corners)
+# Script author: James Leonard
+
+# A slow moving oscillator placed above the other
+# serving as a hammer
+@ham mass 0.3 1. 0.
+@g ground 1.
+@sp springDamper @g @ham 0.0001 0.05
+
+# Add force input to the hammer
+@in1 frcInput @ham
+
+@c nlContact @t_m4_3 @ham 0. 0.01 0.5 0.001
+
+@nls nlSpringDamper @t_m6_2 @me_m3_7 0.01 0.01 0.2 0.
+
+@t_M param 1
+@t_K param 0.1
+@t_Z param 0.001
+@t_Zo param 0.00005
+
+@t_m0_0 ground 0 
+@t_m0_1 osc t_M 0 t_Zo 0. 0. 
+@t_m0_2 osc t_M 0 t_Zo 0. 0. 
+@t_m0_3 osc t_M 0 t_Zo 0. 0. 
+@t_m0_4 osc t_M 0 t_Zo 0. 0. 
+@t_m0_5 osc t_M 0 t_Zo 0. 0. 
+@t_m0_6 osc t_M 0 t_Zo 0. 0. 
+@t_m0_7 osc t_M 0 t_Zo 0. 0. 
+@t_m0_8 osc t_M 0 t_Zo 0. 0. 
+@t_m0_9 ground 0
+@t_m1_0 osc t_M 0 t_Zo 0. 0. 
+@t_m1_1 osc t_M 0 t_Zo 0. 0. 
+@t_m1_2 osc t_M 0 t_Zo 0. 0. 
+@t_m1_3 osc t_M 0 t_Zo 0. 0. 
+@t_m1_4 osc t_M 0 t_Zo 0. 0. 
+@t_m1_5 osc t_M 0 t_Zo 0. 0. 
+@t_m1_6 osc t_M 0 t_Zo 0. 0. 
+@t_m1_7 osc t_M 0 t_Zo 0. 0. 
+@t_m1_8 osc t_M 0 t_Zo 0. 0. 
+@t_m2_0 osc t_M 0 t_Zo 0. 0. 
+@t_m2_1 osc t_M 0 t_Zo 0. 0. 
+@t_m2_2 osc t_M 0 t_Zo 0. 0. 
+@t_m2_3 osc t_M 0 t_Zo 0. 0. 
+@t_m2_4 osc t_M 0 t_Zo 0. 0. 
+@t_m2_5 osc t_M 0 t_Zo 0. 0. 
+@t_m2_6 osc t_M 0 t_Zo 0. 0. 
+@t_m2_7 osc t_M 0 t_Zo 0. 0. 
+@t_m3_0 osc t_M 0 t_Zo 0. 0. 
+@t_m3_1 osc t_M 0 t_Zo 0. 0. 
+@t_m3_2 osc t_M 0 t_Zo 0. 0. 
+@t_m3_3 osc t_M 0 t_Zo 0. 0. 
+@t_m3_4 osc t_M 0 t_Zo 0. 0. 
+@t_m3_5 osc t_M 0 t_Zo 0. 0. 
+@t_m3_6 osc t_M 0 t_Zo 0. 0. 
+@t_m4_0 osc t_M 0 t_Zo 0. 0. 
+@t_m4_1 osc t_M 0 t_Zo 0. 0. 
+@t_m4_2 osc t_M 0 t_Zo 0. 0. 
+@t_m4_3 osc t_M 0 t_Zo 0. 0. 
+@t_m4_4 osc t_M 0 t_Zo 0. 0. 
+@t_m4_5 osc t_M 0 t_Zo 0. 0. 
+@t_m5_0 osc t_M 0 t_Zo 0. 0. 
+@t_m5_1 osc t_M 0 t_Zo 0. 0. 
+@t_m5_2 osc t_M 0 t_Zo 0. 0. 
+@t_m5_3 osc t_M 0 t_Zo 0. 0. 
+@t_m5_4 osc t_M 0 t_Zo 0. 0. 
+@t_m6_0 osc t_M 0 t_Zo 0. 0. 
+@t_m6_1 osc t_M 0 t_Zo 0. 0. 
+@t_m6_2 osc t_M 0 t_Zo 0. 0. 
+@t_m6_3 osc t_M 0 t_Zo 0. 0. 
+@t_m7_0 osc t_M 0 t_Zo 0. 0. 
+@t_m7_1 osc t_M 0 t_Zo 0. 0. 
+@t_m7_2 osc t_M 0 t_Zo 0. 0. 
+@t_m8_0 osc t_M 0 t_Zo 0. 0. 
+@t_m8_1 osc t_M 0 t_Zo 0. 0. 
+@t_m9_0 ground 0
+
+@t_r0 springDamper @t_m0_0 @t_m0_1 t_K t_Z
+@t_r1 springDamper @t_m0_1 @t_m0_2 t_K t_Z
+@t_r2 springDamper @t_m0_2 @t_m0_3 t_K t_Z
+@t_r3 springDamper @t_m0_3 @t_m0_4 t_K t_Z
+@t_r4 springDamper @t_m0_4 @t_m0_5 t_K t_Z
+@t_r5 springDamper @t_m0_5 @t_m0_6 t_K t_Z
+@t_r6 springDamper @t_m0_6 @t_m0_7 t_K t_Z
+@t_r7 springDamper @t_m0_7 @t_m0_8 t_K t_Z
+@t_r8 springDamper @t_m0_8 @t_m0_9 t_K t_Z
+@t_r9 springDamper @t_m1_0 @t_m1_1 t_K t_Z
+@t_r10 springDamper @t_m1_1 @t_m1_2 t_K t_Z
+@t_r11 springDamper @t_m1_2 @t_m1_3 t_K t_Z
+@t_r12 springDamper @t_m1_3 @t_m1_4 t_K t_Z
+@t_r13 springDamper @t_m1_4 @t_m1_5 t_K t_Z
+@t_r14 springDamper @t_m1_5 @t_m1_6 t_K t_Z
+@t_r15 springDamper @t_m1_6 @t_m1_7 t_K t_Z
+@t_r16 springDamper @t_m1_7 @t_m1_8 t_K t_Z
+@t_r17 springDamper @t_m2_0 @t_m2_1 t_K t_Z
+@t_r18 springDamper @t_m2_1 @t_m2_2 t_K t_Z
+@t_r19 springDamper @t_m2_2 @t_m2_3 t_K t_Z
+@t_r20 springDamper @t_m2_3 @t_m2_4 t_K t_Z
+@t_r21 springDamper @t_m2_4 @t_m2_5 t_K t_Z
+@t_r22 springDamper @t_m2_5 @t_m2_6 t_K t_Z
+@t_r23 springDamper @t_m2_6 @t_m2_7 t_K t_Z
+@t_r24 springDamper @t_m3_0 @t_m3_1 t_K t_Z
+@t_r25 springDamper @t_m3_1 @t_m3_2 t_K t_Z
+@t_r26 springDamper @t_m3_2 @t_m3_3 t_K t_Z
+@t_r27 springDamper @t_m3_3 @t_m3_4 t_K t_Z
+@t_r28 springDamper @t_m3_4 @t_m3_5 t_K t_Z
+@t_r29 springDamper @t_m3_5 @t_m3_6 t_K t_Z
+@t_r30 springDamper @t_m4_0 @t_m4_1 t_K t_Z
+@t_r31 springDamper @t_m4_1 @t_m4_2 t_K t_Z
+@t_r32 springDamper @t_m4_2 @t_m4_3 t_K t_Z
+@t_r33 springDamper @t_m4_3 @t_m4_4 t_K t_Z
+@t_r34 springDamper @t_m4_4 @t_m4_5 t_K t_Z
+@t_r35 springDamper @t_m5_0 @t_m5_1 t_K t_Z
+@t_r36 springDamper @t_m5_1 @t_m5_2 t_K t_Z
+@t_r37 springDamper @t_m5_2 @t_m5_3 t_K t_Z
+@t_r38 springDamper @t_m5_3 @t_m5_4 t_K t_Z
+@t_r39 springDamper @t_m6_0 @t_m6_1 t_K t_Z
+@t_r40 springDamper @t_m6_1 @t_m6_2 t_K t_Z
+@t_r41 springDamper @t_m6_2 @t_m6_3 t_K t_Z
+@t_r42 springDamper @t_m7_0 @t_m7_1 t_K t_Z
+@t_r43 springDamper @t_m7_1 @t_m7_2 t_K t_Z
+@t_r44 springDamper @t_m8_0 @t_m8_1 t_K t_Z
+
+@t_r45 springDamper @t_m0_0 @t_m1_0 t_K t_Z
+@t_r46 springDamper @t_m0_1 @t_m1_1 t_K t_Z
+@t_r47 springDamper @t_m0_2 @t_m1_2 t_K t_Z
+@t_r48 springDamper @t_m0_3 @t_m1_3 t_K t_Z
+@t_r49 springDamper @t_m0_4 @t_m1_4 t_K t_Z
+@t_r50 springDamper @t_m0_5 @t_m1_5 t_K t_Z
+@t_r51 springDamper @t_m0_6 @t_m1_6 t_K t_Z
+@t_r52 springDamper @t_m0_7 @t_m1_7 t_K t_Z
+@t_r53 springDamper @t_m0_8 @t_m1_8 t_K t_Z
+@t_r54 springDamper @t_m1_0 @t_m2_0 t_K t_Z
+@t_r55 springDamper @t_m1_1 @t_m2_1 t_K t_Z
+@t_r56 springDamper @t_m1_2 @t_m2_2 t_K t_Z
+@t_r57 springDamper @t_m1_3 @t_m2_3 t_K t_Z
+@t_r58 springDamper @t_m1_4 @t_m2_4 t_K t_Z
+@t_r59 springDamper @t_m1_5 @t_m2_5 t_K t_Z
+@t_r60 springDamper @t_m1_6 @t_m2_6 t_K t_Z
+@t_r61 springDamper @t_m1_7 @t_m2_7 t_K t_Z
+@t_r62 springDamper @t_m2_0 @t_m3_0 t_K t_Z
+@t_r63 springDamper @t_m2_1 @t_m3_1 t_K t_Z
+@t_r64 springDamper @t_m2_2 @t_m3_2 t_K t_Z
+@t_r65 springDamper @t_m2_3 @t_m3_3 t_K t_Z
+@t_r66 springDamper @t_m2_4 @t_m3_4 t_K t_Z
+@t_r67 springDamper @t_m2_5 @t_m3_5 t_K t_Z
+@t_r68 springDamper @t_m2_6 @t_m3_6 t_K t_Z
+@t_r69 springDamper @t_m3_0 @t_m4_0 t_K t_Z
+@t_r70 springDamper @t_m3_1 @t_m4_1 t_K t_Z
+@t_r71 springDamper @t_m3_2 @t_m4_2 t_K t_Z
+@t_r72 springDamper @t_m3_3 @t_m4_3 t_K t_Z
+@t_r73 springDamper @t_m3_4 @t_m4_4 t_K t_Z
+@t_r74 springDamper @t_m3_5 @t_m4_5 t_K t_Z
+@t_r75 springDamper @t_m4_0 @t_m5_0 t_K t_Z
+@t_r76 springDamper @t_m4_1 @t_m5_1 t_K t_Z
+@t_r77 springDamper @t_m4_2 @t_m5_2 t_K t_Z
+@t_r78 springDamper @t_m4_3 @t_m5_3 t_K t_Z
+@t_r79 springDamper @t_m4_4 @t_m5_4 t_K t_Z
+@t_r80 springDamper @t_m5_0 @t_m6_0 t_K t_Z
+@t_r81 springDamper @t_m5_1 @t_m6_1 t_K t_Z
+@t_r82 springDamper @t_m5_2 @t_m6_2 t_K t_Z
+@t_r83 springDamper @t_m5_3 @t_m6_3 t_K t_Z
+@t_r84 springDamper @t_m6_0 @t_m7_0 t_K t_Z
+@t_r85 springDamper @t_m6_1 @t_m7_1 t_K t_Z
+@t_r86 springDamper @t_m6_2 @t_m7_2 t_K t_Z
+@t_r87 springDamper @t_m7_0 @t_m8_0 t_K t_Z
+@t_r88 springDamper @t_m7_1 @t_m8_1 t_K t_Z
+@t_r89 springDamper @t_m8_0 @t_m9_0 t_K t_Z
+
+@t_r90 springDamper @t_m0_1 @t_m1_0 t_K t_Z
+@t_r91 springDamper @t_m0_2 @t_m1_1 t_K t_Z
+@t_r92 springDamper @t_m0_3 @t_m1_2 t_K t_Z
+@t_r93 springDamper @t_m0_4 @t_m1_3 t_K t_Z
+@t_r94 springDamper @t_m0_5 @t_m1_4 t_K t_Z
+@t_r95 springDamper @t_m0_6 @t_m1_5 t_K t_Z
+@t_r96 springDamper @t_m0_7 @t_m1_6 t_K t_Z
+@t_r97 springDamper @t_m0_8 @t_m1_7 t_K t_Z
+@t_r98 springDamper @t_m0_9 @t_m1_8 t_K t_Z
+@t_r99 springDamper @t_m1_1 @t_m2_0 t_K t_Z
+@t_r100 springDamper @t_m1_2 @t_m2_1 t_K t_Z
+@t_r101 springDamper @t_m1_3 @t_m2_2 t_K t_Z
+@t_r102 springDamper @t_m1_4 @t_m2_3 t_K t_Z
+@t_r103 springDamper @t_m1_5 @t_m2_4 t_K t_Z
+@t_r104 springDamper @t_m1_6 @t_m2_5 t_K t_Z
+@t_r105 springDamper @t_m1_7 @t_m2_6 t_K t_Z
+@t_r106 springDamper @t_m1_8 @t_m2_7 t_K t_Z
+@t_r107 springDamper @t_m2_1 @t_m3_0 t_K t_Z
+@t_r108 springDamper @t_m2_2 @t_m3_1 t_K t_Z
+@t_r109 springDamper @t_m2_3 @t_m3_2 t_K t_Z
+@t_r110 springDamper @t_m2_4 @t_m3_3 t_K t_Z
+@t_r111 springDamper @t_m2_5 @t_m3_4 t_K t_Z
+@t_r112 springDamper @t_m2_6 @t_m3_5 t_K t_Z
+@t_r113 springDamper @t_m2_7 @t_m3_6 t_K t_Z
+@t_r114 springDamper @t_m3_1 @t_m4_0 t_K t_Z
+@t_r115 springDamper @t_m3_2 @t_m4_1 t_K t_Z
+@t_r116 springDamper @t_m3_3 @t_m4_2 t_K t_Z
+@t_r117 springDamper @t_m3_4 @t_m4_3 t_K t_Z
+@t_r118 springDamper @t_m3_5 @t_m4_4 t_K t_Z
+@t_r119 springDamper @t_m3_6 @t_m4_5 t_K t_Z
+@t_r120 springDamper @t_m4_1 @t_m5_0 t_K t_Z
+@t_r121 springDamper @t_m4_2 @t_m5_1 t_K t_Z
+@t_r122 springDamper @t_m4_3 @t_m5_2 t_K t_Z
+@t_r123 springDamper @t_m4_4 @t_m5_3 t_K t_Z
+@t_r124 springDamper @t_m4_5 @t_m5_4 t_K t_Z
+@t_r125 springDamper @t_m5_1 @t_m6_0 t_K t_Z
+@t_r126 springDamper @t_m5_2 @t_m6_1 t_K t_Z
+@t_r127 springDamper @t_m5_3 @t_m6_2 t_K t_Z
+@t_r128 springDamper @t_m5_4 @t_m6_3 t_K t_Z
+@t_r129 springDamper @t_m6_1 @t_m7_0 t_K t_Z
+@t_r130 springDamper @t_m6_2 @t_m7_1 t_K t_Z
+@t_r131 springDamper @t_m6_3 @t_m7_2 t_K t_Z
+@t_r132 springDamper @t_m7_1 @t_m8_0 t_K t_Z
+@t_r133 springDamper @t_m7_2 @t_m8_1 t_K t_Z
+@t_r134 springDamper @t_m8_1 @t_m9_0 t_K t_Z
+
+
+
+@me_M param 1
+@me_K param 0.1
+@me_Z param 0.001
+@me_Zo param 0.00005
+
+@me_m0_0 ground 0
+@me_m0_1 osc me_M 0 me_Zo 0. 0. 
+@me_m0_2 osc me_M 0 me_Zo 0. 0. 
+@me_m0_3 osc me_M 0 me_Zo 0. 0. 
+@me_m0_4 osc me_M 0 me_Zo 0. 0. 
+@me_m0_5 osc me_M 0 me_Zo 0. 0. 
+@me_m0_6 osc me_M 0 me_Zo 0. 0. 
+@me_m0_7 osc me_M 0 me_Zo 0. 0. 
+@me_m0_8 osc me_M 0 me_Zo 0. 0. 
+@me_m0_9 ground 0
+@me_m1_0 osc me_M 0 me_Zo 0. 0. 
+@me_m1_1 osc me_M 0 me_Zo 0. 0. 
+@me_m1_2 osc me_M 0 me_Zo 0. 0. 
+@me_m1_3 osc me_M 0 me_Zo 0. 0. 
+@me_m1_4 osc me_M 0 me_Zo 0. 0. 
+@me_m1_5 osc me_M 0 me_Zo 0. 0. 
+@me_m1_6 osc me_M 0 me_Zo 0. 0. 
+@me_m1_7 osc me_M 0 me_Zo 0. 0. 
+@me_m1_8 osc me_M 0 me_Zo 0. 0. 
+@me_m1_9 osc me_M 0 me_Zo 0. 0. 
+@me_m2_0 osc me_M 0 me_Zo 0. 0. 
+@me_m2_1 osc me_M 0 me_Zo 0. 0. 
+@me_m2_2 osc me_M 0 me_Zo 0. 0. 
+@me_m2_3 osc me_M 0 me_Zo 0. 0. 
+@me_m2_4 osc me_M 0 me_Zo 0. 0. 
+@me_m2_5 osc me_M 0 me_Zo 0. 0. 
+@me_m2_6 osc me_M 0 me_Zo 0. 0. 
+@me_m2_7 osc me_M 0 me_Zo 0. 0. 
+@me_m2_8 osc me_M 0 me_Zo 0. 0. 
+@me_m2_9 osc me_M 0 me_Zo 0. 0. 
+@me_m3_0 osc me_M 0 me_Zo 0. 0. 
+@me_m3_1 osc me_M 0 me_Zo 0. 0. 
+@me_m3_2 osc me_M 0 me_Zo 0. 0. 
+@me_m3_3 osc me_M 0 me_Zo 0. 0. 
+@me_m3_4 osc me_M 0 me_Zo 0. 0. 
+@me_m3_5 osc me_M 0 me_Zo 0. 0. 
+@me_m3_6 osc me_M 0 me_Zo 0. 0. 
+@me_m3_7 osc me_M 0 me_Zo 0. 0. 
+@me_m3_8 osc me_M 0 me_Zo 0. 0. 
+@me_m3_9 osc me_M 0 me_Zo 0. 0. 
+@me_m4_0 osc me_M 0 me_Zo 0. 0. 
+@me_m4_1 osc me_M 0 me_Zo 0. 0. 
+@me_m4_2 osc me_M 0 me_Zo 0. 0. 
+@me_m4_3 osc me_M 0 me_Zo 0. 0. 
+@me_m4_4 osc me_M 0 me_Zo 0. 0. 
+@me_m4_5 osc me_M 0 me_Zo 0. 0. 
+@me_m4_6 osc me_M 0 me_Zo 0. 0. 
+@me_m4_7 osc me_M 0 me_Zo 0. 0. 
+@me_m4_8 osc me_M 0 me_Zo 0. 0. 
+@me_m4_9 osc me_M 0 me_Zo 0. 0. 
+@me_m5_0 osc me_M 0 me_Zo 0. 0. 
+@me_m5_1 osc me_M 0 me_Zo 0. 0. 
+@me_m5_2 osc me_M 0 me_Zo 0. 0. 
+@me_m5_3 osc me_M 0 me_Zo 0. 0. 
+@me_m5_4 osc me_M 0 me_Zo 0. 0. 
+@me_m5_5 osc me_M 0 me_Zo 0. 0. 
+@me_m5_6 osc me_M 0 me_Zo 0. 0. 
+@me_m5_7 osc me_M 0 me_Zo 0. 0. 
+@me_m5_8 osc me_M 0 me_Zo 0. 0. 
+@me_m5_9 osc me_M 0 me_Zo 0. 0. 
+@me_m6_0 osc me_M 0 me_Zo 0. 0. 
+@me_m6_1 osc me_M 0 me_Zo 0. 0. 
+@me_m6_2 osc me_M 0 me_Zo 0. 0. 
+@me_m6_3 osc me_M 0 me_Zo 0. 0. 
+@me_m6_4 osc me_M 0 me_Zo 0. 0. 
+@me_m6_5 osc me_M 0 me_Zo 0. 0. 
+@me_m6_6 osc me_M 0 me_Zo 0. 0. 
+@me_m6_7 osc me_M 0 me_Zo 0. 0. 
+@me_m6_8 osc me_M 0 me_Zo 0. 0. 
+@me_m6_9 osc me_M 0 me_Zo 0. 0. 
+@me_m7_0 osc me_M 0 me_Zo 0. 0. 
+@me_m7_1 osc me_M 0 me_Zo 0. 0. 
+@me_m7_2 osc me_M 0 me_Zo 0. 0. 
+@me_m7_3 osc me_M 0 me_Zo 0. 0. 
+@me_m7_4 osc me_M 0 me_Zo 0. 0. 
+@me_m7_5 osc me_M 0 me_Zo 0. 0. 
+@me_m7_6 osc me_M 0 me_Zo 0. 0. 
+@me_m7_7 osc me_M 0 me_Zo 0. 0. 
+@me_m7_8 osc me_M 0 me_Zo 0. 0. 
+@me_m7_9 osc me_M 0 me_Zo 0. 0. 
+@me_m8_0 osc me_M 0 me_Zo 0. 0. 
+@me_m8_1 osc me_M 0 me_Zo 0. 0. 
+@me_m8_2 osc me_M 0 me_Zo 0. 0. 
+@me_m8_3 osc me_M 0 me_Zo 0. 0. 
+@me_m8_4 osc me_M 0 me_Zo 0. 0. 
+@me_m8_5 osc me_M 0 me_Zo 0. 0. 
+@me_m8_6 osc me_M 0 me_Zo 0. 0. 
+@me_m8_7 osc me_M 0 me_Zo 0. 0. 
+@me_m8_8 osc me_M 0 me_Zo 0. 0. 
+@me_m8_9 osc me_M 0 me_Zo 0. 0. 
+@me_m9_0 ground 0
+@me_m9_1 osc me_M 0 me_Zo 0. 0. 
+@me_m9_2 osc me_M 0 me_Zo 0. 0. 
+@me_m9_3 osc me_M 0 me_Zo 0. 0. 
+@me_m9_4 osc me_M 0 me_Zo 0. 0. 
+@me_m9_5 osc me_M 0 me_Zo 0. 0. 
+@me_m9_6 osc me_M 0 me_Zo 0. 0. 
+@me_m9_7 osc me_M 0 me_Zo 0. 0. 
+@me_m9_8 osc me_M 0 me_Zo 0. 0. 
+@me_m9_9 ground 0
+
+@me_r0 springDamper @me_m0_0 @me_m0_1 me_K me_Z
+@me_r1 springDamper @me_m0_1 @me_m0_2 me_K me_Z
+@me_r2 springDamper @me_m0_2 @me_m0_3 me_K me_Z
+@me_r3 springDamper @me_m0_3 @me_m0_4 me_K me_Z
+@me_r4 springDamper @me_m0_4 @me_m0_5 me_K me_Z
+@me_r5 springDamper @me_m0_5 @me_m0_6 me_K me_Z
+@me_r6 springDamper @me_m0_6 @me_m0_7 me_K me_Z
+@me_r7 springDamper @me_m0_7 @me_m0_8 me_K me_Z
+@me_r8 springDamper @me_m0_8 @me_m0_9 me_K me_Z
+@me_r9 springDamper @me_m1_0 @me_m1_1 me_K me_Z
+@me_r10 springDamper @me_m1_1 @me_m1_2 me_K me_Z
+@me_r11 springDamper @me_m1_2 @me_m1_3 me_K me_Z
+@me_r12 springDamper @me_m1_3 @me_m1_4 me_K me_Z
+@me_r13 springDamper @me_m1_4 @me_m1_5 me_K me_Z
+@me_r14 springDamper @me_m1_5 @me_m1_6 me_K me_Z
+@me_r15 springDamper @me_m1_6 @me_m1_7 me_K me_Z
+@me_r16 springDamper @me_m1_7 @me_m1_8 me_K me_Z
+@me_r17 springDamper @me_m1_8 @me_m1_9 me_K me_Z
+@me_r18 springDamper @me_m2_0 @me_m2_1 me_K me_Z
+@me_r19 springDamper @me_m2_1 @me_m2_2 me_K me_Z
+@me_r20 springDamper @me_m2_2 @me_m2_3 me_K me_Z
+@me_r21 springDamper @me_m2_3 @me_m2_4 me_K me_Z
+@me_r22 springDamper @me_m2_4 @me_m2_5 me_K me_Z
+@me_r23 springDamper @me_m2_5 @me_m2_6 me_K me_Z
+@me_r24 springDamper @me_m2_6 @me_m2_7 me_K me_Z
+@me_r25 springDamper @me_m2_7 @me_m2_8 me_K me_Z
+@me_r26 springDamper @me_m2_8 @me_m2_9 me_K me_Z
+@me_r27 springDamper @me_m3_0 @me_m3_1 me_K me_Z
+@me_r28 springDamper @me_m3_1 @me_m3_2 me_K me_Z
+@me_r29 springDamper @me_m3_2 @me_m3_3 me_K me_Z
+@me_r30 springDamper @me_m3_3 @me_m3_4 me_K me_Z
+@me_r31 springDamper @me_m3_4 @me_m3_5 me_K me_Z
+@me_r32 springDamper @me_m3_5 @me_m3_6 me_K me_Z
+@me_r33 springDamper @me_m3_6 @me_m3_7 me_K me_Z
+@me_r34 springDamper @me_m3_7 @me_m3_8 me_K me_Z
+@me_r35 springDamper @me_m3_8 @me_m3_9 me_K me_Z
+@me_r36 springDamper @me_m4_0 @me_m4_1 me_K me_Z
+@me_r37 springDamper @me_m4_1 @me_m4_2 me_K me_Z
+@me_r38 springDamper @me_m4_2 @me_m4_3 me_K me_Z
+@me_r39 springDamper @me_m4_3 @me_m4_4 me_K me_Z
+@me_r40 springDamper @me_m4_4 @me_m4_5 me_K me_Z
+@me_r41 springDamper @me_m4_5 @me_m4_6 me_K me_Z
+@me_r42 springDamper @me_m4_6 @me_m4_7 me_K me_Z
+@me_r43 springDamper @me_m4_7 @me_m4_8 me_K me_Z
+@me_r44 springDamper @me_m4_8 @me_m4_9 me_K me_Z
+@me_r45 springDamper @me_m5_0 @me_m5_1 me_K me_Z
+@me_r46 springDamper @me_m5_1 @me_m5_2 me_K me_Z
+@me_r47 springDamper @me_m5_2 @me_m5_3 me_K me_Z
+@me_r48 springDamper @me_m5_3 @me_m5_4 me_K me_Z
+@me_r49 springDamper @me_m5_4 @me_m5_5 me_K me_Z
+@me_r50 springDamper @me_m5_5 @me_m5_6 me_K me_Z
+@me_r51 springDamper @me_m5_6 @me_m5_7 me_K me_Z
+@me_r52 springDamper @me_m5_7 @me_m5_8 me_K me_Z
+@me_r53 springDamper @me_m5_8 @me_m5_9 me_K me_Z
+@me_r54 springDamper @me_m6_0 @me_m6_1 me_K me_Z
+@me_r55 springDamper @me_m6_1 @me_m6_2 me_K me_Z
+@me_r56 springDamper @me_m6_2 @me_m6_3 me_K me_Z
+@me_r57 springDamper @me_m6_3 @me_m6_4 me_K me_Z
+@me_r58 springDamper @me_m6_4 @me_m6_5 me_K me_Z
+@me_r59 springDamper @me_m6_5 @me_m6_6 me_K me_Z
+@me_r60 springDamper @me_m6_6 @me_m6_7 me_K me_Z
+@me_r61 springDamper @me_m6_7 @me_m6_8 me_K me_Z
+@me_r62 springDamper @me_m6_8 @me_m6_9 me_K me_Z
+@me_r63 springDamper @me_m7_0 @me_m7_1 me_K me_Z
+@me_r64 springDamper @me_m7_1 @me_m7_2 me_K me_Z
+@me_r65 springDamper @me_m7_2 @me_m7_3 me_K me_Z
+@me_r66 springDamper @me_m7_3 @me_m7_4 me_K me_Z
+@me_r67 springDamper @me_m7_4 @me_m7_5 me_K me_Z
+@me_r68 springDamper @me_m7_5 @me_m7_6 me_K me_Z
+@me_r69 springDamper @me_m7_6 @me_m7_7 me_K me_Z
+@me_r70 springDamper @me_m7_7 @me_m7_8 me_K me_Z
+@me_r71 springDamper @me_m7_8 @me_m7_9 me_K me_Z
+@me_r72 springDamper @me_m8_0 @me_m8_1 me_K me_Z
+@me_r73 springDamper @me_m8_1 @me_m8_2 me_K me_Z
+@me_r74 springDamper @me_m8_2 @me_m8_3 me_K me_Z
+@me_r75 springDamper @me_m8_3 @me_m8_4 me_K me_Z
+@me_r76 springDamper @me_m8_4 @me_m8_5 me_K me_Z
+@me_r77 springDamper @me_m8_5 @me_m8_6 me_K me_Z
+@me_r78 springDamper @me_m8_6 @me_m8_7 me_K me_Z
+@me_r79 springDamper @me_m8_7 @me_m8_8 me_K me_Z
+@me_r80 springDamper @me_m8_8 @me_m8_9 me_K me_Z
+@me_r81 springDamper @me_m9_0 @me_m9_1 me_K me_Z
+@me_r82 springDamper @me_m9_1 @me_m9_2 me_K me_Z
+@me_r83 springDamper @me_m9_2 @me_m9_3 me_K me_Z
+@me_r84 springDamper @me_m9_3 @me_m9_4 me_K me_Z
+@me_r85 springDamper @me_m9_4 @me_m9_5 me_K me_Z
+@me_r86 springDamper @me_m9_5 @me_m9_6 me_K me_Z
+@me_r87 springDamper @me_m9_6 @me_m9_7 me_K me_Z
+@me_r88 springDamper @me_m9_7 @me_m9_8 me_K me_Z
+@me_r89 springDamper @me_m9_8 @me_m9_9 me_K me_Z
+
+@me_r90 springDamper @me_m0_0 @me_m1_0 me_K me_Z
+@me_r91 springDamper @me_m0_1 @me_m1_1 me_K me_Z
+@me_r92 springDamper @me_m0_2 @me_m1_2 me_K me_Z
+@me_r93 springDamper @me_m0_3 @me_m1_3 me_K me_Z
+@me_r94 springDamper @me_m0_4 @me_m1_4 me_K me_Z
+@me_r95 springDamper @me_m0_5 @me_m1_5 me_K me_Z
+@me_r96 springDamper @me_m0_6 @me_m1_6 me_K me_Z
+@me_r97 springDamper @me_m0_7 @me_m1_7 me_K me_Z
+@me_r98 springDamper @me_m0_8 @me_m1_8 me_K me_Z
+@me_r99 springDamper @me_m0_9 @me_m1_9 me_K me_Z
+@me_r100 springDamper @me_m1_0 @me_m2_0 me_K me_Z
+@me_r101 springDamper @me_m1_1 @me_m2_1 me_K me_Z
+@me_r102 springDamper @me_m1_2 @me_m2_2 me_K me_Z
+@me_r103 springDamper @me_m1_3 @me_m2_3 me_K me_Z
+@me_r104 springDamper @me_m1_4 @me_m2_4 me_K me_Z
+@me_r105 springDamper @me_m1_5 @me_m2_5 me_K me_Z
+@me_r106 springDamper @me_m1_6 @me_m2_6 me_K me_Z
+@me_r107 springDamper @me_m1_7 @me_m2_7 me_K me_Z
+@me_r108 springDamper @me_m1_8 @me_m2_8 me_K me_Z
+@me_r109 springDamper @me_m1_9 @me_m2_9 me_K me_Z
+@me_r110 springDamper @me_m2_0 @me_m3_0 me_K me_Z
+@me_r111 springDamper @me_m2_1 @me_m3_1 me_K me_Z
+@me_r112 springDamper @me_m2_2 @me_m3_2 me_K me_Z
+@me_r113 springDamper @me_m2_3 @me_m3_3 me_K me_Z
+@me_r114 springDamper @me_m2_4 @me_m3_4 me_K me_Z
+@me_r115 springDamper @me_m2_5 @me_m3_5 me_K me_Z
+@me_r116 springDamper @me_m2_6 @me_m3_6 me_K me_Z
+@me_r117 springDamper @me_m2_7 @me_m3_7 me_K me_Z
+@me_r118 springDamper @me_m2_8 @me_m3_8 me_K me_Z
+@me_r119 springDamper @me_m2_9 @me_m3_9 me_K me_Z
+@me_r120 springDamper @me_m3_0 @me_m4_0 me_K me_Z
+@me_r121 springDamper @me_m3_1 @me_m4_1 me_K me_Z
+@me_r122 springDamper @me_m3_2 @me_m4_2 me_K me_Z
+@me_r123 springDamper @me_m3_3 @me_m4_3 me_K me_Z
+@me_r124 springDamper @me_m3_4 @me_m4_4 me_K me_Z
+@me_r125 springDamper @me_m3_5 @me_m4_5 me_K me_Z
+@me_r126 springDamper @me_m3_6 @me_m4_6 me_K me_Z
+@me_r127 springDamper @me_m3_7 @me_m4_7 me_K me_Z
+@me_r128 springDamper @me_m3_8 @me_m4_8 me_K me_Z
+@me_r129 springDamper @me_m3_9 @me_m4_9 me_K me_Z
+@me_r130 springDamper @me_m4_0 @me_m5_0 me_K me_Z
+@me_r131 springDamper @me_m4_1 @me_m5_1 me_K me_Z
+@me_r132 springDamper @me_m4_2 @me_m5_2 me_K me_Z
+@me_r133 springDamper @me_m4_3 @me_m5_3 me_K me_Z
+@me_r134 springDamper @me_m4_4 @me_m5_4 me_K me_Z
+@me_r135 springDamper @me_m4_5 @me_m5_5 me_K me_Z
+@me_r136 springDamper @me_m4_6 @me_m5_6 me_K me_Z
+@me_r137 springDamper @me_m4_7 @me_m5_7 me_K me_Z
+@me_r138 springDamper @me_m4_8 @me_m5_8 me_K me_Z
+@me_r139 springDamper @me_m4_9 @me_m5_9 me_K me_Z
+@me_r140 springDamper @me_m5_0 @me_m6_0 me_K me_Z
+@me_r141 springDamper @me_m5_1 @me_m6_1 me_K me_Z
+@me_r142 springDamper @me_m5_2 @me_m6_2 me_K me_Z
+@me_r143 springDamper @me_m5_3 @me_m6_3 me_K me_Z
+@me_r144 springDamper @me_m5_4 @me_m6_4 me_K me_Z
+@me_r145 springDamper @me_m5_5 @me_m6_5 me_K me_Z
+@me_r146 springDamper @me_m5_6 @me_m6_6 me_K me_Z
+@me_r147 springDamper @me_m5_7 @me_m6_7 me_K me_Z
+@me_r148 springDamper @me_m5_8 @me_m6_8 me_K me_Z
+@me_r149 springDamper @me_m5_9 @me_m6_9 me_K me_Z
+@me_r150 springDamper @me_m6_0 @me_m7_0 me_K me_Z
+@me_r151 springDamper @me_m6_1 @me_m7_1 me_K me_Z
+@me_r152 springDamper @me_m6_2 @me_m7_2 me_K me_Z
+@me_r153 springDamper @me_m6_3 @me_m7_3 me_K me_Z
+@me_r154 springDamper @me_m6_4 @me_m7_4 me_K me_Z
+@me_r155 springDamper @me_m6_5 @me_m7_5 me_K me_Z
+@me_r156 springDamper @me_m6_6 @me_m7_6 me_K me_Z
+@me_r157 springDamper @me_m6_7 @me_m7_7 me_K me_Z
+@me_r158 springDamper @me_m6_8 @me_m7_8 me_K me_Z
+@me_r159 springDamper @me_m6_9 @me_m7_9 me_K me_Z
+@me_r160 springDamper @me_m7_0 @me_m8_0 me_K me_Z
+@me_r161 springDamper @me_m7_1 @me_m8_1 me_K me_Z
+@me_r162 springDamper @me_m7_2 @me_m8_2 me_K me_Z
+@me_r163 springDamper @me_m7_3 @me_m8_3 me_K me_Z
+@me_r164 springDamper @me_m7_4 @me_m8_4 me_K me_Z
+@me_r165 springDamper @me_m7_5 @me_m8_5 me_K me_Z
+@me_r166 springDamper @me_m7_6 @me_m8_6 me_K me_Z
+@me_r167 springDamper @me_m7_7 @me_m8_7 me_K me_Z
+@me_r168 springDamper @me_m7_8 @me_m8_8 me_K me_Z
+@me_r169 springDamper @me_m7_9 @me_m8_9 me_K me_Z
+@me_r170 springDamper @me_m8_0 @me_m9_0 me_K me_Z
+@me_r171 springDamper @me_m8_1 @me_m9_1 me_K me_Z
+@me_r172 springDamper @me_m8_2 @me_m9_2 me_K me_Z
+@me_r173 springDamper @me_m8_3 @me_m9_3 me_K me_Z
+@me_r174 springDamper @me_m8_4 @me_m9_4 me_K me_Z
+@me_r175 springDamper @me_m8_5 @me_m9_5 me_K me_Z
+@me_r176 springDamper @me_m8_6 @me_m9_6 me_K me_Z
+@me_r177 springDamper @me_m8_7 @me_m9_7 me_K me_Z
+@me_r178 springDamper @me_m8_8 @me_m9_8 me_K me_Z
+@me_r179 springDamper @me_m8_9 @me_m9_9 me_K me_Z
+
+@out1 posOutput @me_m5_5
+@out2 posOutput @t_m2_1
+
