@@ -36,3 +36,24 @@ with{
 	nbOut = 1;
 };
 process = in1 : model:*(OutGain);
+
+
+/*
+========= MIMS SCRIPT USED FOR MODEL GENERATION =============
+
+# MIMS script file
+# Script author: James Leonard
+
+# Integrated harmonic oscillator with M = 1, K = 0.1, Z = 0.0003
+@o osc 1. 0.1 0.0003 0. 0.
+
+# Add force input to the model
+@in1 frcInput @o
+
+# Add position output from the oscillator
+@out1 posOutput @o
+
+
+# end of MIMS script
+
+*/

@@ -33,3 +33,26 @@ with{
 	nbOut = 2;
 };
 process = in1 : model:*(OutGain), *(OutGain);
+
+
+/*
+========= MIMS SCRIPT USED FOR MODEL GENERATION =============
+
+# MIMS script file
+# Script author: James Leonard
+
+# Integrated harmonic oscillator 
+@o osc 1. 0.1 0.0003 0. 0.
+
+# Position input, controlled by audio signal
+@in1 posInput 1.
+
+@pl nlPluck @o @in1 0.5 0.1 0.001
+
+# Add position output from the oscillator
+@out1 posOutput @o
+@out2 posOutput @in1
+
+# end of MIMS script
+
+*/

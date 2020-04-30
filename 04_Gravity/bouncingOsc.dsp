@@ -16,7 +16,7 @@ import("stdfaust.lib");
 import("mi.lib");
 
 
-OutGain = 100;
+OutGain = 700;
 
 grav = 0.002;
 K = 0.04;
@@ -37,3 +37,29 @@ with{
 	nbOut = 1;
 };
 process = model:*(OutGain);
+
+
+/*
+========= MIMS SCRIPT USED FOR MODEL GENERATION =============
+
+# MIMS script file
+# Script author: James Leonard
+
+@grav param 0.002
+@K param 0.04
+
+# Integrated harmonic oscillator 
+@o osc 1. K 0.0003 0. 0.
+
+# Hammer mass falling down with gravity
+@p mass 1 grav 3. 0.
+
+@c contact @o @p 0.1 0.02
+
+# Add position output from the oscillator
+@out1 posOutput @o
+#@out2 posOutput @p
+
+# end of MIMS script
+
+*/

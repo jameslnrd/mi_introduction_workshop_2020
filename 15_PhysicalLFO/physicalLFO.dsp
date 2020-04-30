@@ -66,3 +66,43 @@ with{
 	nbOut = 1;
 };
 process = in1 : model:*(OutGain)*no.noise;
+
+
+/*
+========= MIMS SCRIPT USED FOR MODEL GENERATION =============
+
+@str_M param 1.0
+@str_K param 0.1
+@str_Z param 0.001
+
+@str_s0 ground 0.
+@str_m0 mass str_M 0. 0.
+@str_m1 mass str_M 0. 0.
+@str_m2 mass str_M 0. 0.
+@str_m3 mass str_M 0. 0.
+@str_m4 mass str_M 0. 0.
+@str_m5 mass str_M 0. 0.
+@str_m6 mass str_M 0. 0.
+@str_m7 mass str_M 0. 0.
+@str_m8 mass str_M 0. 0.
+@str_m9 mass str_M 0. 0.
+@str_s1 ground 0.
+
+@str_r0 springDamper @str_s0 @str_m0 str_K str_Z
+@str_r1 springDamper @str_m0 @str_m1 str_K str_Z
+@str_r2 springDamper @str_m1 @str_m2 str_K str_Z
+@str_r3 springDamper @str_m2 @str_m3 str_K str_Z
+@str_r4 springDamper @str_m3 @str_m4 str_K str_Z
+@str_r5 springDamper @str_m4 @str_m5 str_K str_Z
+@str_r6 springDamper @str_m5 @str_m6 str_K str_Z
+@str_r7 springDamper @str_m6 @str_m7 str_K str_Z
+@str_r8 springDamper @str_m7 @str_m8 str_K str_Z
+@str_r9 springDamper @str_m8 @str_m9 str_K str_Z
+@str_r10 springDamper @str_m9 @str_s1 str_K str_Z
+
+
+@in1 frcInput @str_m0
+
+@out1 posOutput @str_m1
+
+*/

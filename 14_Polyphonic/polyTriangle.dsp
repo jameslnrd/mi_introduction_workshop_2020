@@ -50,3 +50,31 @@ with{
 	nbOut = 1;
 };
 process = in1 : model:*(OutGain);
+
+
+/*
+========= MIMS SCRIPT USED FOR MODEL GENERATION =============
+
+# Define global parameter attributes
+@m_K param 0.1
+@m_Z param 0.001
+
+# Create material points
+@m_s0 ground 0.
+@m_m0 mass 1. 0. 0.
+@m_m1 mass 1. 0. 0.
+@m_m2 mass 1. 0. 0.
+
+# Create and connect interaction modules
+@m_r0 springDamper @m_s0 @m_m0 0.05 0.01
+@m_r1 springDamper @m_m0 @m_m1 m_K m_Z
+@m_r2 springDamper @m_m1 @m_m2 m_K m_Z
+@m_r3 springDamper @m_m2 @m_m0 m_K m_Z
+
+# Force input, applied to m1
+@in1 frcInput @m_m1
+
+# Position output, observed on m2
+@out1 posOutput @m_m2
+
+*/
