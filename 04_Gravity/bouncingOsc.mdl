@@ -8,7 +8,7 @@
 @o osc 1. K 0.0003 0. 0.
 
 # Hammer mass falling down with gravity
-@p mass 1 grav 3. 0.
+@p mass 1 grav 0.5 0.
 
 @c contact @o @p 0.1 0.02
 
